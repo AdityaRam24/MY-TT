@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Login Form</title>
+   <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+   <div class="center"> 
+      <div class="header">Login Form</div>
+      <form>
+         <input type="text" placeholder="Roll Number  or Username">
+         <i class="far fa-envelope"></i>
+         <input id="pswrd" type="password" placeholder="Password">
+         <i class="fas fa-lock" onclick="togglePasswordVisibility()"></i>
+         <input type="submit" value="Sign in">
+         <a href="#">Forgot Password?</a>
+      </form>
+   </div>
+   <script>
+      function togglePasswordVisibility() {
+         var passwordField = document.getElementById('pswrd');
+         var lockIcon = document.querySelector('.fas');
+         if (passwordField.type === "password") {
+            passwordField.type = "text";
+            passwordField.style.marginTop = "20px";
+            lockIcon.style.color = "#7f2092";
+         } else {
+            passwordField.type = "password";
+            lockIcon.style.color = "grey";
+         }
+      }
+   </script>
+</body>
+</html>

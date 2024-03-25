@@ -1,0 +1,55 @@
+<!--home pages 
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vidyalankar Institute of Technology</h1>
+            <p>Hello, <span id="username"></span>please select your slots </p>
+        </header>
+        <main>
+            <section class="slots">
+                <h2>Available Slots</h2>
+                <ul id="slotList">
+                    <!-- Slot items will be dynamically added here -->
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Assuming the username is retrieved from somewhere like local storage
+            var username = localStorage.getItem('username');
+            var usernameElement = document.getElementById('username');
+            if (username) {
+                usernameElement.textContent = username;
+            } else {
+                // If username not found, prompt the user to login or register
+                usernameElement.textContent = 'Guest';
+            }
+
+            // Dummy slot data (replace with actual data retrieval)
+            var slots = ['Slot 1', 'Slot 2', 'Slot 3', 'Slot 4', 'Slot 5'];
+
+            var slotList = document.getElementById('slotList');
+            slots.forEach(function(slot) {
+                var li = document.createElement('li');
+                li.textContent = slot;
+                slotList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
